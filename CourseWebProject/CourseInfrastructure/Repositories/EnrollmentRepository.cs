@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CourseInfrastructure
+namespace CourseInfrastructure.Repositories
 {
-    internal class Program
+    internal class EnrollmentRepository
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }
