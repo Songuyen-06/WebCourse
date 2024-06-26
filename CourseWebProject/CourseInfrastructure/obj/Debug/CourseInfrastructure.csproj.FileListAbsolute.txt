@@ -1,2 +1,0 @@
-C:\Users\Son\OneDrive\Máy tính\WebCourse\CourseWebProject\CourseInfrastructure\obj\Debug\CourseInfrastructure.csproj.AssemblyReference.cache
-C:\Users\Son\OneDrive\Máy tính\WebCourse\CourseWebProject\CourseInfrastructure\obj\Debug\CourseInfrastructure.csproj.CoreCompileInputs.cache

@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace CourseDomain.Contracts
+namespace CourseDomain
 {
     public interface IGenericRepository<T> where T : class
     {

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Son\\OneDrive\\Máy tính\\WebCourse\\CourseWebProject\\CourseWeb\\CourseWeb.csproj": {}
+    "D:\\C#\\WebCourse\\CourseWebProject\\CourseWeb\\CourseWeb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Son\\OneDrive\\Máy tính\\WebCourse\\CourseWebProject\\CourseWeb\\CourseWeb.csproj": {
+    "D:\\C#\\WebCourse\\CourseWebProject\\CourseWeb\\CourseWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Son\\OneDrive\\Máy tính\\WebCourse\\CourseWebProject\\CourseWeb\\CourseWeb.csproj",
+        "projectUniqueName": "D:\\C#\\WebCourse\\CourseWebProject\\CourseWeb\\CourseWeb.csproj",
         "projectName": "CourseWeb",
-        "projectPath": "C:\\Users\\Son\\OneDrive\\Máy tính\\WebCourse\\CourseWebProject\\CourseWeb\\CourseWeb.csproj",
+        "projectPath": "D:\\C#\\WebCourse\\CourseWebProject\\CourseWeb\\CourseWeb.csproj",
         "packagesPath": "C:\\Users\\Son\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Son\\OneDrive\\Máy tính\\WebCourse\\CourseWebProject\\CourseWeb\\obj\\",
+        "outputPath": "D:\\C#\\WebCourse\\CourseWebProject\\CourseWeb\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,0 +1,15 @@
+D:\C#\WebCourse\CourseWebProject\CourseDomain\bin\Debug\net7.0\CourseDomain.exe
+D:\C#\WebCourse\CourseWebProject\CourseDomain\bin\Debug\net7.0\CourseDomain.deps.json
+D:\C#\WebCourse\CourseWebProject\CourseDomain\bin\Debug\net7.0\CourseDomain.runtimeconfig.json
+D:\C#\WebCourse\CourseWebProject\CourseDomain\bin\Debug\net7.0\CourseDomain.dll
+D:\C#\WebCourse\CourseWebProject\CourseDomain\bin\Debug\net7.0\CourseDomain.pdb
+D:\C#\WebCourse\CourseWebProject\CourseDomain\obj\Debug\net7.0\CourseDomain.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\WebCourse\CourseWebProject\CourseDomain\obj\Debug\net7.0\CourseDomain.AssemblyInfoInputs.cache
+D:\C#\WebCourse\CourseWebProject\CourseDomain\obj\Debug\net7.0\CourseDomain.AssemblyInfo.cs
+D:\C#\WebCourse\CourseWebProject\CourseDomain\obj\Debug\net7.0\CourseDomain.csproj.CoreCompileInputs.cache
+D:\C#\WebCourse\CourseWebProject\CourseDomain\obj\Debug\net7.0\CourseDomain.sourcelink.json
+D:\C#\WebCourse\CourseWebProject\CourseDomain\obj\Debug\net7.0\CourseDomain.dll
+D:\C#\WebCourse\CourseWebProject\CourseDomain\obj\Debug\net7.0\refint\CourseDomain.dll
+D:\C#\WebCourse\CourseWebProject\CourseDomain\obj\Debug\net7.0\CourseDomain.pdb
+D:\C#\WebCourse\CourseWebProject\CourseDomain\obj\Debug\net7.0\CourseDomain.genruntimeconfig.cache
+D:\C#\WebCourse\CourseWebProject\CourseDomain\obj\Debug\net7.0\ref\CourseDomain.dll

@@ -1,8 +1,11 @@
 ﻿
 
-namespace CourseDomain.Contracts
+
+using CourseDomain;
+
+namespace CourseDomain
 {
-    public  interface  IReviewRepository
+    public interface IReviewRepository : IGenericRepository<Review>
     {
     }
 }

@@ -1,18 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CourseDomain.Models
+namespace CourseDomain;
+
+public partial class Category
 {
-    public partial class Category
-    {
-        public Category()
-        {
-            Courses = new HashSet<Course>();
-        }
+    public int CategoryId { get; set; }
 
-        public int CategoryId { get; set; }
-        public string Name { get; set; } = null!;
+    public string Name { get; set; } = null!;
 
-        public virtual ICollection<Course> Courses { get; set; }
-    }
+    public virtual ICollection<Course> Courses { get; set; } = new List<Course>();
 }

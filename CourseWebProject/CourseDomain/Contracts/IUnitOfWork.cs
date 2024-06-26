@@ -1,10 +1,19 @@
 ﻿
-namespace CourseDomain.Contracts
+using CourseDomain.Contracts;
+
+namespace CourseDomain
 {
     public interface IUnitOfWork
     {
-        ICourseRepository CourseRepository { get; }
-        IReviewRepository ReviewRepository { get; }
+        ICourseRepository ICourseRepository { get; }
+        IReviewRepository IReviewRepository { get; }
+
+        ICategoryRepository ICategoryRepository { get; }
+
+        ICheckoutRepository ICheckoutRepository { get; }
+
+
+        IEnrollmentRepository IEnrollmentRepository { get; }
         void Commit();
         void Rollback();
         Task CommitAsync();
