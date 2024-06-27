@@ -1,5 +1,5 @@
-﻿--create database CoursesDB--- ;
- use CoursesDB;
+--create database Courses--- ;
+ use Courses;
 -- B?ng Role
 -- B?ng Role
 CREATE TABLE Role (
@@ -184,3 +184,34 @@ INSERT INTO Checkouts (StudentID, CourseID, PaymentDate, Amount, PaymentStatus, 
 VALUES (2, 1, '2024-06-19', 49.99, 'Completed', 'TXN1234567890'),
        (2, 2, '2024-06-20', 59.99, 'Completed', 'TXN0987654321');
 
+-- Tạo bảng Certificate
+CREATE TABLE Certificates (
+    CertificateId INT PRIMARY KEY,
+    Title NVARCHAR(MAX) NOT NULL,
+    Description NVARCHAR(MAX) NOT NULL,
+    CompletionDate DATE NOT NULL,
+    CompletionTime TIME NOT NULL,
+    IssuedBy NVARCHAR(MAX) NOT NULL,
+    CertificateUrl NVARCHAR(MAX) NOT NULL
+);
+
+-- Tạo bảng StudentCertificates
+CREATE TABLE StudentCertificates (
+    UserId INT,
+    CertificateId INT,
+    PRIMARY KEY (UserId, CertificateId),
+    FOREIGN KEY (UserId) REFERENCES Users(UserId),  -- Đảm bảo thay thế Users bằng tên bảng người dùng thực tế nếu khác
+    FOREIGN KEY (CertificateId) REFERENCES Certificates(CertificateId)
+);
+
+-- Insert dữ liệu vào bảng Certificate
+INSERT INTO Certificates (CertificateId, Title, Description, CompletionDate, CompletionTime, IssuedBy, CertificateUrl)
+VALUES
+(1, 'Certificate of Achievement', 'This certificate recognizes achievement in the course.', '2024-06-27', '12:00:00', 'Course Academy', 'https://example.com/certificate1'),
+(2, 'Advanced Certificate', 'Advanced certification for specialized skills.', '2024-06-25', '14:30:00', 'Education Hub', 'https://example.com/certificate2');
+
+-- Insert dữ liệu vào bảng StudentCertificate
+INSERT INTO StudentCertificates (UserId, CertificateId)
+VALUES
+(1, 1),  -- UserId = 1, CertificateId = 1
+(2, 2);  -- UserId = 2, CertificateId = 2
