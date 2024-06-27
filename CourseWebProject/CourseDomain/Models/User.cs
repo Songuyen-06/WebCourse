@@ -32,4 +32,8 @@ public partial class User
     public virtual ICollection<StudentCourse> StudentCourses { get; set; } = new List<StudentCourse>();
 
     public virtual ICollection<SystemSetting> SystemSettings { get; set; } = new List<SystemSetting>();
+
+
+    public virtual ICollection<StudentCertificate> StudentCertificates { get; set; } = new List<StudentCertificate>();
+
 }

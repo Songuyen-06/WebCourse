@@ -4,7 +4,6 @@ using CourseInfrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -14,7 +13,6 @@ namespace CourseInfrastructure.Migrations
     [DbContext(typeof(CoursesDbContext))]
     partial class CoursesDbContextModelSnapshot : ModelSnapshot
     {
-       
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
@@ -24,7 +22,7 @@ namespace CourseInfrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("CourseDomain.Models.Category", b =>
+            modelBuilder.Entity("CourseDomain.Category", b =>
                 {
                     b.Property<int>("CategoryId")
                         .ValueGeneratedOnAdd()
@@ -40,12 +38,47 @@ namespace CourseInfrastructure.Migrations
                         .HasColumnType("varchar(50)");
 
                     b.HasKey("CategoryId")
-                        .HasName("PK__Categori__19093A2B1C92A134");
+                        .HasName("PK__Categori__19093A2B4E099F62");
 
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("CourseDomain.Models.Checkout", b =>
+            modelBuilder.Entity("CourseDomain.Certificate", b =>
+                {
+                    b.Property<int>("CertificateId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CertificateId"));
+
+                    b.Property<string>("CertificateUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CompletionDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<TimeSpan>("CompletionTime")
+                        .HasColumnType("time");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IssuedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CertificateId");
+
+                    b.ToTable("Certificates");
+                });
+
+            modelBuilder.Entity("CourseDomain.Checkout", b =>
                 {
                     b.Property<int>("CheckoutId")
                         .ValueGeneratedOnAdd()
@@ -82,7 +115,7 @@ namespace CourseInfrastructure.Migrations
                         .HasColumnName("TransactionID");
 
                     b.HasKey("CheckoutId")
-                        .HasName("PK__Checkout__E07EF51CF6A8F43E");
+                        .HasName("PK__Checkout__E07EF51CCFBA1268");
 
                     b.HasIndex("CourseId");
 
@@ -91,7 +124,7 @@ namespace CourseInfrastructure.Migrations
                     b.ToTable("Checkouts");
                 });
 
-            modelBuilder.Entity("CourseDomain.Models.Course", b =>
+            modelBuilder.Entity("CourseDomain.Course", b =>
                 {
                     b.Property<int>("CourseId")
                         .ValueGeneratedOnAdd()
@@ -143,7 +176,7 @@ namespace CourseInfrastructure.Migrations
                         .HasColumnName("URL");
 
                     b.HasKey("CourseId")
-                        .HasName("PK__Courses__C92D718776EFE5F8");
+                        .HasName("PK__Courses__C92D71876D4CFFEC");
 
                     b.HasIndex("CategoryId");
 
@@ -152,7 +185,43 @@ namespace CourseInfrastructure.Migrations
                     b.ToTable("Courses");
                 });
 
-            modelBuilder.Entity("CourseDomain.Models.Enrollment", b =>
+            modelBuilder.Entity("CourseDomain.Document", b =>
+                {
+                    b.Property<int>("DocumentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("DocumentID");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DocumentId"));
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime");
+
+                    b.Property<int?>("SectionId")
+                        .HasColumnType("int")
+                        .HasColumnName("SectionID");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Url")
+                        .HasMaxLength(255)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("URL");
+
+                    b.HasKey("DocumentId")
+                        .HasName("PK__Document__1ABEEF6F6F6C41B2");
+
+                    b.HasIndex("SectionId");
+
+                    b.ToTable("Documents");
+                });
+
+            modelBuilder.Entity("CourseDomain.Enrollment", b =>
                 {
                     b.Property<int>("EnrollmentId")
                         .ValueGeneratedOnAdd()
@@ -173,7 +242,7 @@ namespace CourseInfrastructure.Migrations
                         .HasColumnName("StudentID");
 
                     b.HasKey("EnrollmentId")
-                        .HasName("PK__Enrollme__7F6877FB1A50426C");
+                        .HasName("PK__Enrollme__7F6877FB59BADBB3");
 
                     b.HasIndex("CourseId");
 
@@ -182,7 +251,7 @@ namespace CourseInfrastructure.Migrations
                     b.ToTable("Enrollments");
                 });
 
-            modelBuilder.Entity("CourseDomain.Models.Lecture", b =>
+            modelBuilder.Entity("CourseDomain.Lecture", b =>
                 {
                     b.Property<int>("LectureId")
                         .ValueGeneratedOnAdd()
@@ -219,14 +288,14 @@ namespace CourseInfrastructure.Migrations
                         .HasColumnName("VideoURL");
 
                     b.HasKey("LectureId")
-                        .HasName("PK__Lectures__B739F69F6144E8EB");
+                        .HasName("PK__Lectures__B739F69F45AA0B10");
 
                     b.HasIndex("SectionId");
 
                     b.ToTable("Lectures");
                 });
 
-            modelBuilder.Entity("CourseDomain.Models.Review", b =>
+            modelBuilder.Entity("CourseDomain.Review", b =>
                 {
                     b.Property<int>("ReviewId")
                         .ValueGeneratedOnAdd()
@@ -253,7 +322,7 @@ namespace CourseInfrastructure.Migrations
                         .HasColumnName("StudentID");
 
                     b.HasKey("ReviewId")
-                        .HasName("PK__Reviews__74BC79AE02ABBEA8");
+                        .HasName("PK__Reviews__74BC79AEB05343AB");
 
                     b.HasIndex("CourseId");
 
@@ -262,7 +331,7 @@ namespace CourseInfrastructure.Migrations
                     b.ToTable("Reviews");
                 });
 
-            modelBuilder.Entity("CourseDomain.Models.Role", b =>
+            modelBuilder.Entity("CourseDomain.Role", b =>
                 {
                     b.Property<int>("RoleId")
                         .ValueGeneratedOnAdd()
@@ -278,12 +347,12 @@ namespace CourseInfrastructure.Migrations
                         .HasColumnType("varchar(50)");
 
                     b.HasKey("RoleId")
-                        .HasName("PK__Role__8AFACE3AB9C692EB");
+                        .HasName("PK__Role__8AFACE3A672CA399");
 
                     b.ToTable("Role", (string)null);
                 });
 
-            modelBuilder.Entity("CourseDomain.Models.Section", b =>
+            modelBuilder.Entity("CourseDomain.Section", b =>
                 {
                     b.Property<int>("SectionId")
                         .ValueGeneratedOnAdd()
@@ -311,14 +380,29 @@ namespace CourseInfrastructure.Migrations
                         .HasColumnType("varchar(255)");
 
                     b.HasKey("SectionId")
-                        .HasName("PK__Sections__80EF0892F00F11E0");
+                        .HasName("PK__Sections__80EF08920752F11A");
 
                     b.HasIndex("CourseId");
 
                     b.ToTable("Sections");
                 });
 
-            modelBuilder.Entity("CourseDomain.Models.StudentCourse", b =>
+            modelBuilder.Entity("CourseDomain.StudentCertificate", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CertificateId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "CertificateId");
+
+                    b.HasIndex("CertificateId");
+
+                    b.ToTable("StudentCertificates");
+                });
+
+            modelBuilder.Entity("CourseDomain.StudentCourse", b =>
                 {
                     b.Property<int>("UserId")
                         .HasColumnType("int")
@@ -332,14 +416,50 @@ namespace CourseInfrastructure.Migrations
                         .HasColumnType("bit");
 
                     b.HasKey("UserId", "CourseId")
-                        .HasName("PK__StudentC__7B1A1BB406BDC762");
+                        .HasName("PK__StudentC__7B1A1BB4D2465F24");
 
                     b.HasIndex("CourseId");
 
                     b.ToTable("StudentCourses");
                 });
 
-            modelBuilder.Entity("CourseDomain.Models.User", b =>
+            modelBuilder.Entity("CourseDomain.SystemSetting", b =>
+                {
+                    b.Property<int>("SettingId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("SettingID");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SettingId"));
+
+                    b.Property<string>("Language")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<bool>("NotificationsEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Theme")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int")
+                        .HasColumnName("UserID");
+
+                    b.HasKey("SettingId")
+                        .HasName("PK__SystemSe__54372AFDC5ADF01D");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("SystemSettings");
+                });
+
+            modelBuilder.Entity("CourseDomain.User", b =>
                 {
                     b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
@@ -379,136 +499,180 @@ namespace CourseInfrastructure.Migrations
                         .HasColumnName("RoleID");
 
                     b.HasKey("UserId")
-                        .HasName("PK__Users__1788CCAC981B88AF");
+                        .HasName("PK__Users__1788CCACEF9D4767");
 
                     b.HasIndex("RoleId");
 
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("CourseDomain.Models.Checkout", b =>
+            modelBuilder.Entity("CourseDomain.Checkout", b =>
                 {
-                    b.HasOne("CourseDomain.Models.Course", "Course")
+                    b.HasOne("CourseDomain.Course", "Course")
                         .WithMany("Checkouts")
                         .HasForeignKey("CourseId")
-                        .HasConstraintName("FK__Checkouts__Cours__5EBF139D");
+                        .HasConstraintName("FK__Checkouts__Cours__571DF1D5");
 
-                    b.HasOne("CourseDomain.Models.User", "Student")
+                    b.HasOne("CourseDomain.User", "Student")
                         .WithMany("Checkouts")
                         .HasForeignKey("StudentId")
-                        .HasConstraintName("FK__Checkouts__Stude__5DCAEF64");
+                        .HasConstraintName("FK__Checkouts__Stude__5629CD9C");
 
                     b.Navigation("Course");
 
                     b.Navigation("Student");
                 });
 
-            modelBuilder.Entity("CourseDomain.Models.Course", b =>
+            modelBuilder.Entity("CourseDomain.Course", b =>
                 {
-                    b.HasOne("CourseDomain.Models.Category", "Category")
+                    b.HasOne("CourseDomain.Category", "Category")
                         .WithMany("Courses")
                         .HasForeignKey("CategoryId")
-                        .HasConstraintName("FK__Courses__Categor__48CFD27E");
+                        .HasConstraintName("FK__Courses__Categor__3E52440B");
 
-                    b.HasOne("CourseDomain.Models.User", "Instructor")
+                    b.HasOne("CourseDomain.User", "Instructor")
                         .WithMany("Courses")
                         .HasForeignKey("InstructorId")
-                        .HasConstraintName("FK__Courses__Instruc__49C3F6B7");
+                        .HasConstraintName("FK__Courses__Instruc__3F466844");
 
                     b.Navigation("Category");
 
                     b.Navigation("Instructor");
                 });
 
-            modelBuilder.Entity("CourseDomain.Models.Enrollment", b =>
+            modelBuilder.Entity("CourseDomain.Document", b =>
                 {
-                    b.HasOne("CourseDomain.Models.Course", "Course")
-                        .WithMany("Enrollments")
-                        .HasForeignKey("CourseId")
-                        .HasConstraintName("FK__Enrollmen__Cours__571DF1D5");
-
-                    b.HasOne("CourseDomain.Models.User", "Student")
-                        .WithMany("Enrollments")
-                        .HasForeignKey("StudentId")
-                        .HasConstraintName("FK__Enrollmen__Stude__5629CD9C");
-
-                    b.Navigation("Course");
-
-                    b.Navigation("Student");
-                });
-
-            modelBuilder.Entity("CourseDomain.Models.Lecture", b =>
-                {
-                    b.HasOne("CourseDomain.Models.Section", "Section")
-                        .WithMany("Lectures")
+                    b.HasOne("CourseDomain.Section", "Section")
+                        .WithMany("Documents")
                         .HasForeignKey("SectionId")
-                        .HasConstraintName("FK__Lectures__Sectio__4F7CD00D");
+                        .HasConstraintName("FK__Documents__Secti__47DBAE45");
 
                     b.Navigation("Section");
                 });
 
-            modelBuilder.Entity("CourseDomain.Models.Review", b =>
+            modelBuilder.Entity("CourseDomain.Enrollment", b =>
                 {
-                    b.HasOne("CourseDomain.Models.Course", "Course")
-                        .WithMany("Reviews")
+                    b.HasOne("CourseDomain.Course", "Course")
+                        .WithMany("Enrollments")
                         .HasForeignKey("CourseId")
-                        .HasConstraintName("FK__Reviews__CourseI__5AEE82B9");
+                        .HasConstraintName("FK__Enrollmen__Cours__4F7CD00D");
 
-                    b.HasOne("CourseDomain.Models.User", "Student")
-                        .WithMany("Reviews")
+                    b.HasOne("CourseDomain.User", "Student")
+                        .WithMany("Enrollments")
                         .HasForeignKey("StudentId")
-                        .HasConstraintName("FK__Reviews__Student__59FA5E80");
+                        .HasConstraintName("FK__Enrollmen__Stude__4E88ABD4");
 
                     b.Navigation("Course");
 
                     b.Navigation("Student");
                 });
 
-            modelBuilder.Entity("CourseDomain.Models.Section", b =>
+            modelBuilder.Entity("CourseDomain.Lecture", b =>
                 {
-                    b.HasOne("CourseDomain.Models.Course", "Course")
+                    b.HasOne("CourseDomain.Section", "Section")
+                        .WithMany("Lectures")
+                        .HasForeignKey("SectionId")
+                        .HasConstraintName("FK__Lectures__Sectio__44FF419A");
+
+                    b.Navigation("Section");
+                });
+
+            modelBuilder.Entity("CourseDomain.Review", b =>
+                {
+                    b.HasOne("CourseDomain.Course", "Course")
+                        .WithMany("Reviews")
+                        .HasForeignKey("CourseId")
+                        .HasConstraintName("FK__Reviews__CourseI__534D60F1");
+
+                    b.HasOne("CourseDomain.User", "Student")
+                        .WithMany("Reviews")
+                        .HasForeignKey("StudentId")
+                        .HasConstraintName("FK__Reviews__Student__52593CB8");
+
+                    b.Navigation("Course");
+
+                    b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("CourseDomain.Section", b =>
+                {
+                    b.HasOne("CourseDomain.Course", "Course")
                         .WithMany("Sections")
                         .HasForeignKey("CourseId")
-                        .HasConstraintName("FK__Sections__Course__4CA06362");
+                        .HasConstraintName("FK__Sections__Course__4222D4EF");
 
                     b.Navigation("Course");
                 });
 
-            modelBuilder.Entity("CourseDomain.Models.StudentCourse", b =>
+            modelBuilder.Entity("CourseDomain.StudentCertificate", b =>
                 {
-                    b.HasOne("CourseDomain.Models.Course", "Course")
+                    b.HasOne("CourseDomain.Certificate", "Certificate")
+                        .WithMany("StudentCertificates")
+                        .HasForeignKey("CertificateId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CourseDomain.User", "User")
+                        .WithMany("StudentCertificates")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Certificate");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("CourseDomain.StudentCourse", b =>
+                {
+                    b.HasOne("CourseDomain.Course", "Course")
                         .WithMany("StudentCourses")
                         .HasForeignKey("CourseId")
                         .IsRequired()
-                        .HasConstraintName("FK__StudentCo__Cours__534D60F1");
+                        .HasConstraintName("FK__StudentCo__Cours__4BAC3F29");
 
-                    b.HasOne("CourseDomain.Models.User", "User")
+                    b.HasOne("CourseDomain.User", "User")
                         .WithMany("StudentCourses")
                         .HasForeignKey("UserId")
                         .IsRequired()
-                        .HasConstraintName("FK__StudentCo__UserI__52593CB8");
+                        .HasConstraintName("FK__StudentCo__UserI__4AB81AF0");
 
                     b.Navigation("Course");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("CourseDomain.Models.User", b =>
+            modelBuilder.Entity("CourseDomain.SystemSetting", b =>
                 {
-                    b.HasOne("CourseDomain.Models.Role", "Role")
+                    b.HasOne("CourseDomain.User", "User")
+                        .WithMany("SystemSettings")
+                        .HasForeignKey("UserId")
+                        .HasConstraintName("FK__SystemSet__UserI__59FA5E80");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("CourseDomain.User", b =>
+                {
+                    b.HasOne("CourseDomain.Role", "Role")
                         .WithMany("Users")
                         .HasForeignKey("RoleId")
-                        .HasConstraintName("FK__Users__RoleID__440B1D61");
+                        .HasConstraintName("FK__Users__RoleID__398D8EEE");
 
                     b.Navigation("Role");
                 });
 
-            modelBuilder.Entity("CourseDomain.Models.Category", b =>
+            modelBuilder.Entity("CourseDomain.Category", b =>
                 {
                     b.Navigation("Courses");
                 });
 
-            modelBuilder.Entity("CourseDomain.Models.Course", b =>
+            modelBuilder.Entity("CourseDomain.Certificate", b =>
+                {
+                    b.Navigation("StudentCertificates");
+                });
+
+            modelBuilder.Entity("CourseDomain.Course", b =>
                 {
                     b.Navigation("Checkouts");
 
@@ -521,17 +685,19 @@ namespace CourseInfrastructure.Migrations
                     b.Navigation("StudentCourses");
                 });
 
-            modelBuilder.Entity("CourseDomain.Models.Role", b =>
+            modelBuilder.Entity("CourseDomain.Role", b =>
                 {
                     b.Navigation("Users");
                 });
 
-            modelBuilder.Entity("CourseDomain.Models.Section", b =>
+            modelBuilder.Entity("CourseDomain.Section", b =>
                 {
+                    b.Navigation("Documents");
+
                     b.Navigation("Lectures");
                 });
 
-            modelBuilder.Entity("CourseDomain.Models.User", b =>
+            modelBuilder.Entity("CourseDomain.User", b =>
                 {
                     b.Navigation("Checkouts");
 
@@ -541,7 +707,11 @@ namespace CourseInfrastructure.Migrations
 
                     b.Navigation("Reviews");
 
+                    b.Navigation("StudentCertificates");
+
                     b.Navigation("StudentCourses");
+
+                    b.Navigation("SystemSettings");
                 });
 #pragma warning restore 612, 618
         }

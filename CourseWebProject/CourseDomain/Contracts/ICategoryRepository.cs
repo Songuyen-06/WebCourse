@@ -9,5 +9,6 @@ namespace CourseDomain.Contracts
 {
     public interface ICategoryRepository:IGenericRepository<Category>
     {
+
     }
 }

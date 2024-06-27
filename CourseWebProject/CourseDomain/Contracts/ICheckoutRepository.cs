@@ -9,5 +9,6 @@ namespace CourseDomain.Contracts
 {
     public interface ICheckoutRepository : IGenericRepository<Checkout>
     {
+
     }
 }

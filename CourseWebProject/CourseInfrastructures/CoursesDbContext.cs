@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using CourseDomain;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace CourseInfrastructure;
 
@@ -40,12 +41,35 @@ public partial class CoursesDbContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("server=DESKTOP-2J88IT5;database=CoursesDB;uid=sa;pwd=123456;TrustServerCertificate=True;");
+    public virtual DbSet<Certificate> Certificates { get; set; }
+    public virtual DbSet<StudentCertificate> StudentCertificates { get; set; }
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        Console.WriteLine(Directory.GetCurrentDirectory());
+        IConfiguration config = new ConfigurationBuilder()
+        .SetBasePath(Directory.GetCurrentDirectory())
+        .AddJsonFile("appsettings.json", true, true)
+        .Build();
+        var strConn = config["ConnectionStrings:MyDatabase"];
+        optionsBuilder.UseSqlServer(strConn);
+    }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+
+        modelBuilder.Entity<StudentCertificate>()
+           .HasKey(sc => new { sc.UserId, sc.CertificateId });
+
+        modelBuilder.Entity<StudentCertificate>()
+            .HasOne(sc => sc.User)
+            .WithMany(u => u.StudentCertificates)
+            .HasForeignKey(sc => sc.UserId);
+
+        modelBuilder.Entity<StudentCertificate>()
+            .HasOne(sc => sc.Certificate)
+            .WithMany(c => c.StudentCertificates)
+            .HasForeignKey(sc => sc.CertificateId);
+
         modelBuilder.Entity<Category>(entity =>
         {
             entity.HasKey(e => e.CategoryId).HasName("PK__Categori__19093A2B4E099F62");

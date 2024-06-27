@@ -8,6 +8,7 @@ namespace CourseInfrastructure
     {
         public CategoryRepository(CoursesDbContext dbContext) : base(dbContext)
         {
+
         }
     }
 }
