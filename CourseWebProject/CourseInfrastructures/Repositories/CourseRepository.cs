@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,9 +18,10 @@ namespace CourseInfrastructure
 
         }
 
-        public List<Course> GetContentCourseById(int courseId)
+        public Course  GetContentCourseById(int courseId)
         {
-            throw new NotImplementedException();
+            Expression<Func<Course, bool>> filter = c => c.CourseId == courseId;
+            return Get(filter);
 
         }
 
