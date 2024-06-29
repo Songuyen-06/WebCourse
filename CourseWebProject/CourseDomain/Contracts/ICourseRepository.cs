@@ -1,13 +1,13 @@
 ﻿
 
 
+using CourseDomain.DTOs;
+
 namespace CourseDomain
 {
     public interface ICourseRepository : IGenericRepository<Course>
     {
-        public Course GetCourseByIdInclude();
-        public Course GetContentCourseById(int courseId);
 
-
+        public Course GetCourseById(int courseId);
     }
 }

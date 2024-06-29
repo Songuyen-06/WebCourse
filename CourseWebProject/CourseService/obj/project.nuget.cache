@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "oJhhW7JZ7FqEpfIzLCRYtLbcMELDF2fx7A8jCa1FpNAUrV0uH+bQf84JPnhc0Fw8ctuY4j7I9jn0Ct8F9DoU3Q==",
+  "dgSpecHash": "/I4wA8F9oivvThk4K0iZg3mA64HvySBdu4BvTqnEPIRuFoz5fegD+R/YK/bl9uuIlwVyd7LJbItKRq0iwIGacg==",
   "success": true,
   "projectFilePath": "D:\\C#\\WebCourse\\CourseWebProject\\CourseService\\CourseServices.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Son\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Son\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\Son\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Son\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\Son\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "C:\\Users\\Son\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Son\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Son\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.1\\microsoft.data.sqlclient.5.1.1.nupkg.sha512",
     "C:\\Users\\Son\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.1.0\\microsoft.data.sqlclient.sni.runtime.5.1.0.nupkg.sha512",
     "C:\\Users\\Son\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.11\\microsoft.entityframeworkcore.7.0.11.nupkg.sha512",

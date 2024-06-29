@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CourseServices
 {
-    internal interface IReviewService
+    public  interface IReviewService
     {
         public IEnumerable<Review> GetListReviewByCourseId(int courseId);
     }

@@ -1,40 +1,45 @@
-﻿using CourseDomain;
+﻿using AutoMapper;
+using CourseDomain;
+using CourseDomain.DTOs;
+using System.Linq.Expressions;
 
 namespace CourseServices
 {
     public class CourseService : ICourseService
     {
         private readonly IUnitOfWork _unitOfWork;
-        public CourseService(IUnitOfWork unitOfWork)
+        private readonly IMapper _mapper;
+        public CourseService(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
-        public void Add(Course course)
+        public void AddCourse(Course course)
         {
             _unitOfWork.ICourseRepository.Add(course);
             _unitOfWork.Commit();
         }
 
-        public void Delete(Course course)
+        public void DeleteCourse(Course course)
         {
             _unitOfWork.ICourseRepository.Remove(course);
             _unitOfWork.Commit();
         }
 
-        public Course GetCourse(int id)
+        public CourseDTO GetCourseById(int courseId)
         {
-            throw new NotImplementedException();
+            return _mapper.Map<CourseDTO>(_unitOfWork.ICourseRepository.GetCourseById(courseId));
         }
 
-        public List<Course> GetCourses()
+        public List<CourseDTO> GetListCourse()
         {
-            return _unitOfWork.ICourseRepository.GetAll().ToList();
+            return _mapper.Map<List<CourseDTO>>( _unitOfWork.ICourseRepository.GetAll().ToList());
         }
 
-        
 
-        public void Update(Course course)
+
+        public void UpdateCourse(Course course)
         {
             _unitOfWork.ICourseRepository.Update(course);
             _unitOfWork.Commit();

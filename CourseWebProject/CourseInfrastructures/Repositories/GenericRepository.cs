@@ -1,4 +1,5 @@
-﻿using CourseDomain;
+﻿using AutoMapper;
+using CourseDomain;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
@@ -8,11 +9,11 @@ namespace CourseInfrastructure.Repositories
     {
         protected readonly CoursesDbContext _dbContext;
         protected readonly DbSet<T> _entitySet;
-
         public GenericRepository(CoursesDbContext dbContext)
         {
             _dbContext = dbContext;
             _entitySet = _dbContext.Set<T>();
+
         }
         public void Add(T entity)
         {
@@ -27,11 +28,12 @@ namespace CourseInfrastructure.Repositories
         public IEnumerable<T> GetAll()
         {
             return _entitySet.AsEnumerable();
+
         }
 
         public IEnumerable<T> GetAll(Expression<Func<T, bool>> expression)
         {
-            return _entitySet.Where(expression).AsEnumerable();
+            return  _entitySet.Where(expression).AsEnumerable();
         }
 
         public void Remove(T entity)

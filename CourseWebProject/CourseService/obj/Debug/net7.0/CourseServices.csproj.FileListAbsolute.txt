@@ -9,6 +9,8 @@ D:\C#\WebCourse\CourseWebProject\CourseService\bin\Debug\net7.0\CourseServices.d
 D:\C#\WebCourse\CourseWebProject\CourseService\bin\Debug\net7.0\CourseServices.runtimeconfig.json
 D:\C#\WebCourse\CourseWebProject\CourseService\bin\Debug\net7.0\CourseServices.dll
 D:\C#\WebCourse\CourseWebProject\CourseService\bin\Debug\net7.0\CourseServices.pdb
+D:\C#\WebCourse\CourseWebProject\CourseService\bin\Debug\net7.0\AutoMapper.dll
+D:\C#\WebCourse\CourseWebProject\CourseService\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\C#\WebCourse\CourseWebProject\CourseService\bin\Debug\net7.0\Azure.Core.dll
 D:\C#\WebCourse\CourseWebProject\CourseService\bin\Debug\net7.0\Azure.Identity.dll
 D:\C#\WebCourse\CourseWebProject\CourseService\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll

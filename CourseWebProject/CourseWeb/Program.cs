@@ -11,6 +11,8 @@ builder.Services.AddDbContext<CoursesDbContext>(option => option.UseSqlServer(bu
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ICourseService, CourseService>();
+builder.Services.AddScoped<IReviewService, ReviewService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -1,5 +1,7 @@
 ﻿
+using AutoMapper;
 using CourseDomain;
+using CourseDomain.DTOs;
 using CourseInfrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -18,16 +20,23 @@ namespace CourseInfrastructure
 
         }
 
-        public Course  GetContentCourseById(int courseId)
+        public Course GetCourseById(int courseId)
         {
-            Expression<Func<Course, bool>> filter = c => c.CourseId == courseId;
-            return Get(filter);
+            return _entitySet.Include(c => c.Instructor).
+                Include(c => c.Category).
+                Include(c => c.StudentCourses).ThenInclude(sc => sc.User).
+                Include(c => c.Sections).ThenInclude(s => s.Lectures).
+                  Include(c => c.Reviews).ThenInclude(r => r.Student).
+                  FirstOrDefault(c => c.CourseId == courseId);
 
         }
 
-        public List<Course> GetCourseByIdIncludeRating(int courseId)
-        {
-            throw new NotImplementedException();
-        }
+
+
+
+
+
+
+
     }
 }

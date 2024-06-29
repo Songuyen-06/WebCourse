@@ -1,3 +1,9 @@
+D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\obj\Debug\net7.0\CourseInfrastructure.csproj.AssemblyReference.cache
+D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\obj\Debug\net7.0\CourseInfrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\obj\Debug\net7.0\CourseInfrastructure.AssemblyInfoInputs.cache
+D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\obj\Debug\net7.0\CourseInfrastructure.AssemblyInfo.cs
+D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\obj\Debug\net7.0\CourseInfrastructure.csproj.CoreCompileInputs.cache
+D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\obj\Debug\net7.0\CourseInfrastructure.sourcelink.json
 D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\bin\Debug\net7.0\CourseDomain.deps.json
 D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\bin\Debug\net7.0\CourseDomain.runtimeconfig.json
 D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\bin\Debug\net7.0\CourseDomain.exe
@@ -6,6 +12,8 @@ D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\bin\Debug\net7.0\CourseIn
 D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\bin\Debug\net7.0\CourseInfrastructure.runtimeconfig.json
 D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\bin\Debug\net7.0\CourseInfrastructure.dll
 D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\bin\Debug\net7.0\CourseInfrastructure.pdb
+D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\bin\Debug\net7.0\AutoMapper.dll
+D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\bin\Debug\net7.0\Azure.Core.dll
 D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\bin\Debug\net7.0\Azure.Identity.dll
 D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\bin\Debug\net7.0\Humanizer.dll
@@ -66,12 +74,6 @@ D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\bin\Debug\net7.0\runtimes
 D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\bin\Debug\net7.0\CourseDomain.dll
 D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\bin\Debug\net7.0\CourseDomain.pdb
-D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\obj\Debug\net7.0\CourseInfrastructure.csproj.AssemblyReference.cache
-D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\obj\Debug\net7.0\CourseInfrastructure.GeneratedMSBuildEditorConfig.editorconfig
-D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\obj\Debug\net7.0\CourseInfrastructure.AssemblyInfoInputs.cache
-D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\obj\Debug\net7.0\CourseInfrastructure.AssemblyInfo.cs
-D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\obj\Debug\net7.0\CourseInfrastructure.csproj.CoreCompileInputs.cache
-D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\obj\Debug\net7.0\CourseInfrastructure.sourcelink.json
 D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\obj\Debug\net7.0\CourseIn.C4ED05C5.Up2Date
 D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\obj\Debug\net7.0\CourseInfrastructure.dll
 D:\C#\WebCourse\CourseWebProject\CourseInfrastructures\obj\Debug\net7.0\refint\CourseInfrastructure.dll

@@ -1,4 +1,5 @@
-﻿using CourseDomain;
+﻿using AutoMapper;
+using CourseDomain;
 using CourseDomain.Contracts;
 using CourseInfrastructure.Repositories;
 

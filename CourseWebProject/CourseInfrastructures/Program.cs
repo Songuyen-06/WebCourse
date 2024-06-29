@@ -1,12 +1,16 @@
-﻿using System;
+﻿using AutoMapper;
+using CourseDomain;
+using CourseInfrastructure.Repositories;
+using CourseInfrastructure;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 
-namespace CourseDomain
-{
-    class Program
+class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
         }
     }
-}

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace CourseServices
 {
-    internal interface ICategoryService
+    public interface ICategoryService
     {
-        public List<Category> GetCategories();
+        public List<Category> GetListCategory();
 
     }
 }

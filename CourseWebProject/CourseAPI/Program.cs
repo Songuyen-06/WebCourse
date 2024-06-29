@@ -15,7 +15,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<CoursesDbContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("MyDatabase")));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ICourseService, CourseService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 
 var app = builder.Build();

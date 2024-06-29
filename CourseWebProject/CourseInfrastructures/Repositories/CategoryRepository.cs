@@ -1,4 +1,5 @@
-﻿using CourseDomain;
+﻿using AutoMapper;
+using CourseDomain;
 using CourseDomain.Contracts;
 using CourseInfrastructure.Repositories;
 
@@ -8,7 +9,8 @@ namespace CourseInfrastructure
     {
         public CategoryRepository(CoursesDbContext dbContext) : base(dbContext)
         {
-
         }
+
+
     }
 }

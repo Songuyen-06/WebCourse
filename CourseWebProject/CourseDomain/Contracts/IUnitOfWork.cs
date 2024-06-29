@@ -12,6 +12,7 @@ namespace CourseDomain
 
         ICheckoutRepository ICheckoutRepository { get; }
 
+  
 
         IEnrollmentRepository IEnrollmentRepository { get; }
         void Commit();

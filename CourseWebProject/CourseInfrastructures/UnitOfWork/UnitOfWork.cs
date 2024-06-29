@@ -1,4 +1,5 @@
-﻿using CourseDomain;
+﻿using AutoMapper;
+using CourseDomain;
 using CourseDomain.Contracts;
 using CourseInfrastructure;
 
@@ -8,13 +9,13 @@ namespace CourseInfrastructure
     {
         private readonly CoursesDbContext _dbContext;
 
+
         private ICourseRepository _courseRepository;
         private IReviewRepository _reviewRepository;
         private IEnrollmentRepository _enrollmentRepository;
         private ICheckoutRepository _checkoutRepository;
         private ICategoryRepository _categoryRepository;
-
-        public UnitOfWork(CoursesDbContext dbContext)
+        public UnitOfWork(CoursesDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
         }
@@ -31,7 +32,7 @@ namespace CourseInfrastructure
 
         public ICategoryRepository ICategoryRepository => _categoryRepository ?? new CategoryRepository(_dbContext);
 
-       
+
         public void Commit()
         {
             _dbContext.SaveChanges();

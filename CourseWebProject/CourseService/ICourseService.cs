@@ -2,15 +2,16 @@
 
 
 using CourseDomain;
+using CourseDomain.DTOs;
 
 namespace CourseServices
 {
     public interface ICourseService
     {
-        List<Course> GetCourses();
-        Course GetCourse(int id);
-        void Add(Course course);
-        void Update(Course course);
-        void Delete(Course course);
+        List<CourseDTO> GetListCourse();
+        CourseDTO  GetCourseById(int id);
+        void AddCourse(Course course);
+        void UpdateCourse(Course course);
+        void DeleteCourse(Course course);
     }
 }
