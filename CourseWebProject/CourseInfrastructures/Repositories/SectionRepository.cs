@@ -17,13 +17,15 @@ namespace CourseInfrastructure
         public SectionRepository(CoursesDbContext dbContext) : base(dbContext)
         {
         }
-
+        public IQueryable<Section> GetListSectionByInclude()
+        {
+            return _entitySet.Include(s => s.Lectures).
+                 Include(s => s.Documents);
+        }
         public async Task<IEnumerable<Section>> GetListSectionByCourseId(int courdId)
         {
-            _entitySet.Include(s => s.Lectures).
-                Include(s => s.Documents);
-            Expression<Func<Section, bool>> filter = s => s.CourseId == courdId;
-            return await GetAll(filter);
+
+            return await GetListSectionByInclude().Where(s => s.CourseId == courdId).ToListAsync();
         }
     }
 }

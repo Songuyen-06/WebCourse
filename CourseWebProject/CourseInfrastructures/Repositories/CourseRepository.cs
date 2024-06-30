@@ -17,11 +17,7 @@ namespace CourseInfrastructure
     {
         public CourseRepository(CoursesDbContext dbContext) : base(dbContext)
         {
-            _entitySet.Include(c => c.Instructor).
-                Include(c => c.Category).
-                Include(c => c.StudentCourses).ThenInclude(sc => sc.User).
-                Include(c => c.Sections).ThenInclude(s => s.Lectures).
-                  Include(c => c.Reviews).ThenInclude(r => r.Student);
+            
         }
         public IQueryable<Course> GetListCourseByInclude()
         {
