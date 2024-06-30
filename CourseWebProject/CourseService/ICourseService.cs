@@ -8,10 +8,10 @@ namespace CourseServices
 {
     public interface ICourseService
     {
-        List<CourseDTO> GetListCourse();
-        CourseDTO  GetCourseById(int id);
-        void AddCourse(Course course);
-        void UpdateCourse(Course course);
-        void DeleteCourse(Course course);
+        Task<List<CourseDTO>> GetListCourse();
+        Task<CourseDTO> GetCourseById(int id);
+        Task AddCourse(Course course);
+        Task UpdateCourse(Course course);
+        Task DeleteCourse(Course course);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CourseDomain;
 using CourseDomain.DTOs;
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
 namespace CourseServices
@@ -15,34 +16,34 @@ namespace CourseServices
             _mapper = mapper;
         }
 
-        public void AddCourse(Course course)
+        public async Task AddCourse(Course course)
         {
             _unitOfWork.ICourseRepository.Add(course);
-            _unitOfWork.Commit();
+            await _unitOfWork.Commit();
         }
 
-        public void DeleteCourse(Course course)
+        public async Task DeleteCourse(Course course)
         {
             _unitOfWork.ICourseRepository.Remove(course);
-            _unitOfWork.Commit();
+            await _unitOfWork.Commit();
         }
 
-        public CourseDTO GetCourseById(int courseId)
+        public async Task<CourseDTO> GetCourseById(int courseId)
         {
-            return _mapper.Map<CourseDTO>(_unitOfWork.ICourseRepository.GetCourseById(courseId));
+            return _mapper.Map<CourseDTO>(await _unitOfWork.ICourseRepository.GetCourseById(courseId));
         }
 
-        public List<CourseDTO> GetListCourse()
+        public async Task<List<CourseDTO>> GetListCourse()
         {
-            return _mapper.Map<List<CourseDTO>>( _unitOfWork.ICourseRepository.GetAll().ToList());
+            return _mapper.Map<List<CourseDTO>>(await _unitOfWork.ICourseRepository.GetListCourseByInclude().ToListAsync());
         }
 
 
 
-        public void UpdateCourse(Course course)
+        public async Task UpdateCourse(Course course)
         {
             _unitOfWork.ICourseRepository.Update(course);
-            _unitOfWork.Commit();
+            await _unitOfWork.Commit();
         }
     }
 }

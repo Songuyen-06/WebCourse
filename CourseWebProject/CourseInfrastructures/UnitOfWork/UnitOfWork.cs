@@ -15,6 +15,7 @@ namespace CourseInfrastructure
         private IEnrollmentRepository _enrollmentRepository;
         private ICheckoutRepository _checkoutRepository;
         private ICategoryRepository _categoryRepository;
+        private ISectionRepository _sectionRepository;
         public UnitOfWork(CoursesDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
@@ -32,25 +33,21 @@ namespace CourseInfrastructure
 
         public ICategoryRepository ICategoryRepository => _categoryRepository ?? new CategoryRepository(_dbContext);
 
+        public ISectionRepository ISectionRepository => _sectionRepository ?? new SectionRepository(_dbContext);
 
-        public void Commit()
-        {
-            _dbContext.SaveChanges();
-        }
 
-        public async Task CommitAsync()
+        
+
+        public async Task Commit()
         {
             await _dbContext.SaveChangesAsync();
         }
 
-        public void Rollback()
-        {
-            _dbContext.Dispose();
-        }
-
-        public async Task RollbackAsync()
+        public async Task Rollback()
         {
             await _dbContext.DisposeAsync();
         }
+
+        
     }
 }

@@ -32,6 +32,8 @@ namespace CourseDomain.Profiles
               .ForMember(dest => dest.LectureNumber, opt => opt.MapFrom(src => src.Sections.Sum(s=>s.Lectures.Count)))
 
               .ForMember(dest => dest.Duration, opt => opt.MapFrom(src => src.Duration))
+                            .ForMember(dest => dest.Url, opt => opt.MapFrom(src => src.Url))
+
 
 
      .ReverseMap();

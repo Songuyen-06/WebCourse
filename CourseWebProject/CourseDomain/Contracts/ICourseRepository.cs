@@ -7,7 +7,8 @@ namespace CourseDomain
 {
     public interface ICourseRepository : IGenericRepository<Course>
     {
+        public IQueryable<Course> GetListCourseByInclude();
 
-        public Course GetCourseById(int courseId);
+        public Task<Course> GetCourseById(int courseId);
     }
 }

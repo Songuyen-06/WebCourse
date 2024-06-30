@@ -10,18 +10,18 @@ namespace CourseServices
 {
     public  class CategoryService : ICategoryService
     {
-        public IUnitOfWork UnitOfWork { get; set; }
+        public IUnitOfWork _unitOfWork { get; set; }
 
         public CategoryService(IUnitOfWork unitOfWork)
         {
-            UnitOfWork = unitOfWork;
+            _unitOfWork = unitOfWork;
         }
 
 
 
-        public List<Category> GetListCategory()
+        public async Task<IEnumerable<Category>> GetListCategory()
         {
-            return UnitOfWork.ICategoryRepository.GetAll().ToList();
+            return await _unitOfWork.ICategoryRepository.GetAll();
         }
 
 

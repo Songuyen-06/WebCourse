@@ -8,6 +8,6 @@ namespace CourseDomain.Contracts
 {
     public  interface ISectionRepository
     {
-        public IEnumerable<Section> GetSectionsByCourseId(int courdId);
+        public Task<IEnumerable<Section>> GetListSectionByCourseId(int courdId);
     }
 }

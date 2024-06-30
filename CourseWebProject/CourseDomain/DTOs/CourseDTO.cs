@@ -27,6 +27,8 @@ namespace CourseDomain.DTOs
         public int LectureNumber { get; set; }
         public string  Duration { get; set; }
 
+        public string Url {  get; set; }
+
     }
 
 }

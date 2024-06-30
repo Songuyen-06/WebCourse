@@ -18,12 +18,12 @@ namespace CourseInfrastructure
         {
         }
 
-        public IEnumerable<Section> GetSectionsByCourseId(int courdId)
+        public async Task<IEnumerable<Section>> GetListSectionByCourseId(int courdId)
         {
             _entitySet.Include(s => s.Lectures).
                 Include(s => s.Documents);
             Expression<Func<Section, bool>> filter = s => s.CourseId == courdId;
-            return GetAll(filter);
+            return await GetAll(filter);
         }
     }
 }

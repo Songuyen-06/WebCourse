@@ -15,9 +15,11 @@ namespace CourseDomain
   
 
         IEnrollmentRepository IEnrollmentRepository { get; }
-        void Commit();
-        void Rollback();
-        Task CommitAsync();
-        Task RollbackAsync();
+
+        ISectionRepository ISectionRepository { get; }
+
+       
+        Task Commit();
+        Task Rollback();
     }
 }

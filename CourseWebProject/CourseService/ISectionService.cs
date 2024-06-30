@@ -1,4 +1,5 @@
 ﻿using CourseDomain;
+using CourseDomain.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace CourseServices
 {
-    public interface ICategoryService
-    {
-        public Task<IEnumerable<Category>> GetListCategory();
+    public interface ISectionService
 
+    {
+        public Task<List<SectionDTO>> GetListSectionByCourseId(int courseId);
     }
 }

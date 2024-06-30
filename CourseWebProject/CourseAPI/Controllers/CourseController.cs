@@ -23,19 +23,19 @@ namespace CourseAPI.Controllers
         [HttpGet("getCourseById")]
         public async Task<IActionResult> GetCourseById(int id)
         {
-            var courses = _courseService.GetCourseById(id);
+            var courses =await _courseService.GetCourseById(id);
 
            
             return Ok(courses);
 
         }
-        [HttpGet("getCourses")]
+        [HttpGet("getListCourse")]
         public async Task<IActionResult> GetListCourse()
         {
-            var courses = _courseService.GetListCourse();
+            var courses = await _courseService.GetListCourse();
 
 
-            return Ok(courses);
+            return  Ok(courses);
         }
 
 

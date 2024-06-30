@@ -20,26 +20,28 @@ namespace CourseInfrastructure.Repositories
             _dbContext.Add(entity);
         }
 
-        public T Get(Expression<Func<T, bool>> expression)
+        public async Task<T> Get(Expression<Func<T, bool>> expression)
         {
-            return _entitySet.FirstOrDefault(expression);
+            return await _entitySet.FirstOrDefaultAsync(expression);
         }
 
-        public IEnumerable<T> GetAll()
+        public async Task<IEnumerable<T>> GetAll()
         {
-            return _entitySet.AsEnumerable();
+            return await _entitySet.ToListAsync();
 
         }
 
-        public IEnumerable<T> GetAll(Expression<Func<T, bool>> expression)
+        public async Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>> expression)
         {
-            return  _entitySet.Where(expression).AsEnumerable();
+            return await _entitySet.Where(expression).ToListAsync();
         }
 
-        public void Remove(T entity)
+        public void  Remove(T entity)
         {
             _dbContext.Remove(entity);
+            
         }
+
 
         public void Update(T entity)
         {

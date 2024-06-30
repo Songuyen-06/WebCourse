@@ -17,17 +17,24 @@ namespace CourseInfrastructure
     {
         public CourseRepository(CoursesDbContext dbContext) : base(dbContext)
         {
-
+            _entitySet.Include(c => c.Instructor).
+                Include(c => c.Category).
+                Include(c => c.StudentCourses).ThenInclude(sc => sc.User).
+                Include(c => c.Sections).ThenInclude(s => s.Lectures).
+                  Include(c => c.Reviews).ThenInclude(r => r.Student);
         }
-
-        public Course GetCourseById(int courseId)
+        public IQueryable<Course> GetListCourseByInclude()
         {
             return _entitySet.Include(c => c.Instructor).
                 Include(c => c.Category).
                 Include(c => c.StudentCourses).ThenInclude(sc => sc.User).
                 Include(c => c.Sections).ThenInclude(s => s.Lectures).
-                  Include(c => c.Reviews).ThenInclude(r => r.Student).
-                  FirstOrDefault(c => c.CourseId == courseId);
+                  Include(c => c.Reviews).ThenInclude(r => r.Student);
+        }
+
+        public async Task<Course> GetCourseById(int courseId)
+        {
+            return await GetListCourseByInclude().FirstOrDefaultAsync(c => c.CourseId == courseId);
 
         }
 
