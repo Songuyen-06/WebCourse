@@ -27,11 +27,20 @@ namespace CourseServices
             _unitOfWork.CourseRepository.Remove(course);
             await _unitOfWork.Commit();
         }
-
+        public async Task<List<CourseDTO>> GetListCourseByCategoryId(int cateId)
+        {
+            return _mapper.Map< List<CourseDTO>>(await _unitOfWork.CourseRepository.GetListCourseByCategoryId(cateId));
+        }
         public async Task<CourseDTO> GetCourseById(int courseId)
         {
             return _mapper.Map<CourseDTO>(await _unitOfWork.CourseRepository.GetCourseById(courseId));
         }
+
+        public async Task<List<CourseDTO>> GetListCourseByStudentId(int stdId, bool isInCart)
+        {
+            return _mapper.Map<List<CourseDTO>>(await _unitOfWork.CourseRepository.GetListCourseByStudentId(stdId, isInCart));
+        }
+
 
         public async Task<List<CourseDTO>> GetListCourse()
         {

@@ -16,7 +16,7 @@ ODataConventionModelBuilder modelBuilder = new ODataConventionModelBuilder();
 modelBuilder.EntitySet<ReviewDTO>("Review");
 modelBuilder.EntitySet<CourseDTO>("Course");
 modelBuilder.EntitySet<SectionDTO>("Section");
-modelBuilder.EntitySet<CategoryDTO>("Category");
+modelBuilder.EntitySet<Category>("Category");
 
 
 builder.Services.AddEndpointsApiExplorer();

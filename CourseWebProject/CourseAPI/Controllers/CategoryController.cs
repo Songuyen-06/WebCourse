@@ -18,7 +18,7 @@ namespace CourseAPI.Controllers
 
         [HttpGet("getListCategory")]
         [EnableQuery]
-        public async Task<IActionResult> GetListCategory()
+        public async Task<IActionResult> Get()
         {
             return Ok(await _categoryService.GetListCategory());
 

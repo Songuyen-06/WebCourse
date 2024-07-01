@@ -25,9 +25,9 @@ namespace CourseServices
 
 
 
-        public async Task<List<CategoryDTO>> GetListCategory()
+        public async Task<IEnumerable<Category>> GetListCategory()
         {
-            return _mapper.Map<List<CategoryDTO>>(await _unitOfWork.CategoryRepository.GetListCategory());
+            return await _unitOfWork.CategoryRepository.GetAll();
         }
 
 

@@ -10,7 +10,7 @@ namespace CourseServices
 {
     public interface ICategoryService
     {
-        public Task<List<CategoryDTO>> GetListCategory();
+         Task<IEnumerable<Category>> GetListCategory();
 
     }
 }

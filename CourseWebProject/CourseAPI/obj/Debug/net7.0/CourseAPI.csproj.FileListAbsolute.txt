@@ -1,3 +1,11 @@
+D:\C#\WebCourse\CourseWebProject\CourseAPI\obj\Debug\net7.0\CourseAPI.csproj.AssemblyReference.cache
+D:\C#\WebCourse\CourseWebProject\CourseAPI\obj\Debug\net7.0\CourseAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\WebCourse\CourseWebProject\CourseAPI\obj\Debug\net7.0\CourseAPI.AssemblyInfoInputs.cache
+D:\C#\WebCourse\CourseWebProject\CourseAPI\obj\Debug\net7.0\CourseAPI.AssemblyInfo.cs
+D:\C#\WebCourse\CourseWebProject\CourseAPI\obj\Debug\net7.0\CourseAPI.csproj.CoreCompileInputs.cache
+D:\C#\WebCourse\CourseWebProject\CourseAPI\obj\Debug\net7.0\CourseAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\C#\WebCourse\CourseWebProject\CourseAPI\obj\Debug\net7.0\CourseAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\C#\WebCourse\CourseWebProject\CourseAPI\obj\Debug\net7.0\CourseAPI.sourcelink.json
 D:\C#\WebCourse\CourseWebProject\CourseAPI\bin\Debug\net7.0\CourseServices.deps.json
 D:\C#\WebCourse\CourseWebProject\CourseAPI\bin\Debug\net7.0\CourseServices.runtimeconfig.json
 D:\C#\WebCourse\CourseWebProject\CourseAPI\bin\Debug\net7.0\CourseInfrastructure.deps.json
@@ -251,14 +259,6 @@ D:\C#\WebCourse\CourseWebProject\CourseAPI\bin\Debug\net7.0\CourseServices.dll
 D:\C#\WebCourse\CourseWebProject\CourseAPI\bin\Debug\net7.0\CourseServices.pdb
 D:\C#\WebCourse\CourseWebProject\CourseAPI\bin\Debug\net7.0\CourseDomain.pdb
 D:\C#\WebCourse\CourseWebProject\CourseAPI\bin\Debug\net7.0\CourseInfrastructure.pdb
-D:\C#\WebCourse\CourseWebProject\CourseAPI\obj\Debug\net7.0\CourseAPI.csproj.AssemblyReference.cache
-D:\C#\WebCourse\CourseWebProject\CourseAPI\obj\Debug\net7.0\CourseAPI.GeneratedMSBuildEditorConfig.editorconfig
-D:\C#\WebCourse\CourseWebProject\CourseAPI\obj\Debug\net7.0\CourseAPI.AssemblyInfoInputs.cache
-D:\C#\WebCourse\CourseWebProject\CourseAPI\obj\Debug\net7.0\CourseAPI.AssemblyInfo.cs
-D:\C#\WebCourse\CourseWebProject\CourseAPI\obj\Debug\net7.0\CourseAPI.csproj.CoreCompileInputs.cache
-D:\C#\WebCourse\CourseWebProject\CourseAPI\obj\Debug\net7.0\CourseAPI.MvcApplicationPartsAssemblyInfo.cs
-D:\C#\WebCourse\CourseWebProject\CourseAPI\obj\Debug\net7.0\CourseAPI.MvcApplicationPartsAssemblyInfo.cache
-D:\C#\WebCourse\CourseWebProject\CourseAPI\obj\Debug\net7.0\CourseAPI.sourcelink.json
 D:\C#\WebCourse\CourseWebProject\CourseAPI\obj\Debug\net7.0\staticwebassets.build.json
 D:\C#\WebCourse\CourseWebProject\CourseAPI\obj\Debug\net7.0\staticwebassets.development.json
 D:\C#\WebCourse\CourseWebProject\CourseAPI\obj\Debug\net7.0\staticwebassets\msbuild.CourseAPI.Microsoft.AspNetCore.StaticWebAssets.props

@@ -18,6 +18,12 @@ namespace CourseAPI.Controllers
             _courseService = courseService;
         }
 
+        [HttpGet("getListCourseByStudentId/{stdId}/{isInCart}")]
+        public async Task<IActionResult> GetListCourseByStudentId(int stdId, bool isInCart)
+        {
+            var courses = await _courseService.GetListCourseByStudentId(stdId, isInCart);
+            return Ok(courses);
+        }
 
 
 
@@ -40,7 +46,14 @@ namespace CourseAPI.Controllers
 
             return  Ok(courses);
         }
+        [HttpGet("getListCourseByCategoryId/{cateId}")]
+        public async Task<IActionResult> GetListCourseByCategoryId(int cateId)
+        {
+            var courses = await _courseService.GetListCourseByCategoryId(cateId);
 
+
+            return Ok(courses);
+        }
 
     }
 }
