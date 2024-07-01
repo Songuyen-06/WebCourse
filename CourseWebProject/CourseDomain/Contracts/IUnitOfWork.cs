@@ -5,18 +5,18 @@ namespace CourseDomain
 {
     public interface IUnitOfWork
     {
-        ICourseRepository ICourseRepository { get; }
-        IReviewRepository IReviewRepository { get; }
+        ICourseRepository CourseRepository { get; }
+        IReviewRepository ReviewRepository { get; }
 
-        ICategoryRepository ICategoryRepository { get; }
+        ICategoryRepository CategoryRepository { get; }
 
-        ICheckoutRepository ICheckoutRepository { get; }
+        ICheckoutRepository CheckoutRepository { get; }
 
   
 
-        IEnrollmentRepository IEnrollmentRepository { get; }
+        IEnrollmentRepository EnrollmentRepository { get; }
 
-        ISectionRepository ISectionRepository { get; }
+        ISectionRepository SectionRepository { get; }
 
        
         Task Commit();

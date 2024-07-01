@@ -14,6 +14,8 @@ D:\C#\WebCourse\CourseWebProject\CourseWeb\bin\Debug\net7.0\CourseWeb.deps.json
 D:\C#\WebCourse\CourseWebProject\CourseWeb\bin\Debug\net7.0\CourseWeb.runtimeconfig.json
 D:\C#\WebCourse\CourseWebProject\CourseWeb\bin\Debug\net7.0\CourseWeb.dll
 D:\C#\WebCourse\CourseWebProject\CourseWeb\bin\Debug\net7.0\CourseWeb.pdb
+D:\C#\WebCourse\CourseWebProject\CourseWeb\bin\Debug\net7.0\AutoMapper.dll
+D:\C#\WebCourse\CourseWebProject\CourseWeb\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\C#\WebCourse\CourseWebProject\CourseWeb\bin\Debug\net7.0\Azure.Core.dll
 D:\C#\WebCourse\CourseWebProject\CourseWeb\bin\Debug\net7.0\Azure.Identity.dll
 D:\C#\WebCourse\CourseWebProject\CourseWeb\bin\Debug\net7.0\Humanizer.dll

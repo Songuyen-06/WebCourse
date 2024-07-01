@@ -1,9 +1,3 @@
-D:\C#\WebCourse\CourseWebProject\CourseService\obj\Debug\net7.0\CourseServices.csproj.AssemblyReference.cache
-D:\C#\WebCourse\CourseWebProject\CourseService\obj\Debug\net7.0\CourseServices.GeneratedMSBuildEditorConfig.editorconfig
-D:\C#\WebCourse\CourseWebProject\CourseService\obj\Debug\net7.0\CourseServices.AssemblyInfoInputs.cache
-D:\C#\WebCourse\CourseWebProject\CourseService\obj\Debug\net7.0\CourseServices.AssemblyInfo.cs
-D:\C#\WebCourse\CourseWebProject\CourseService\obj\Debug\net7.0\CourseServices.csproj.CoreCompileInputs.cache
-D:\C#\WebCourse\CourseWebProject\CourseService\obj\Debug\net7.0\CourseServices.sourcelink.json
 D:\C#\WebCourse\CourseWebProject\CourseService\bin\Debug\net7.0\CourseInfrastructure.deps.json
 D:\C#\WebCourse\CourseWebProject\CourseService\bin\Debug\net7.0\CourseInfrastructure.runtimeconfig.json
 D:\C#\WebCourse\CourseWebProject\CourseService\bin\Debug\net7.0\CourseDomain.deps.json
@@ -74,6 +68,12 @@ D:\C#\WebCourse\CourseWebProject\CourseService\bin\Debug\net7.0\CourseDomain.dll
 D:\C#\WebCourse\CourseWebProject\CourseService\bin\Debug\net7.0\CourseInfrastructure.dll
 D:\C#\WebCourse\CourseWebProject\CourseService\bin\Debug\net7.0\CourseInfrastructure.pdb
 D:\C#\WebCourse\CourseWebProject\CourseService\bin\Debug\net7.0\CourseDomain.pdb
+D:\C#\WebCourse\CourseWebProject\CourseService\obj\Debug\net7.0\CourseServices.csproj.AssemblyReference.cache
+D:\C#\WebCourse\CourseWebProject\CourseService\obj\Debug\net7.0\CourseServices.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\WebCourse\CourseWebProject\CourseService\obj\Debug\net7.0\CourseServices.AssemblyInfoInputs.cache
+D:\C#\WebCourse\CourseWebProject\CourseService\obj\Debug\net7.0\CourseServices.AssemblyInfo.cs
+D:\C#\WebCourse\CourseWebProject\CourseService\obj\Debug\net7.0\CourseServices.csproj.CoreCompileInputs.cache
+D:\C#\WebCourse\CourseWebProject\CourseService\obj\Debug\net7.0\CourseServices.sourcelink.json
 D:\C#\WebCourse\CourseWebProject\CourseService\obj\Debug\net7.0\CourseSe.A2FF6831.Up2Date
 D:\C#\WebCourse\CourseWebProject\CourseService\obj\Debug\net7.0\CourseServices.dll
 D:\C#\WebCourse\CourseWebProject\CourseService\obj\Debug\net7.0\refint\CourseServices.dll

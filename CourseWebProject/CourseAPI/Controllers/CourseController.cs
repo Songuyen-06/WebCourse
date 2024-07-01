@@ -30,7 +30,7 @@ namespace CourseAPI.Controllers
 
         }
         [HttpGet("getListCourse")]
-        public async Task<IActionResult> GetListCourse()
+        public async Task<IActionResult> Get()
         {
             var courses = await _courseService.GetListCourse();
 

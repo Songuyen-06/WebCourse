@@ -7,6 +7,8 @@ namespace CourseDomain
 {
     public interface IReviewRepository : IGenericRepository<Review>
     {
-        public IEnumerable<Review> GetListReviewByCourseId(int courseId);
+        public Task<IEnumerable<Review>> GetListReviewByCourseId(int courseId);
+        public IQueryable<Review> GetListReviewByInclude();
+
     }
 }

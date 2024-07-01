@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.Features;
 using CourseDomain.DTOs;
 using System;
 using System.Linq;
@@ -21,12 +22,11 @@ namespace CourseDomain.Profiles
         private string CalculateTotalDuration(List<Lecture> lectures)
         {
             TimeSpan totalDuration = TimeSpan.Zero;
-            foreach (var lecture in lectures)
-            {
-                if (TimeSpan.TryParse(lecture.Duration, out TimeSpan lectureDuration))
-                {
-                    totalDuration += lectureDuration;
-                }
+            foreach (var l in lectures)
+            {             
+                
+                    totalDuration += l.Duration.Value;
+                
             }
             return totalDuration.ToString(@"hh\:mm\:ss");
         }

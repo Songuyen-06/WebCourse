@@ -21,7 +21,7 @@ namespace CourseServices
 
         public async Task<IEnumerable<Category>> GetListCategory()
         {
-            return await _unitOfWork.ICategoryRepository.GetAll();
+            return await _unitOfWork.CategoryRepository.GetAll();
         }
 
 

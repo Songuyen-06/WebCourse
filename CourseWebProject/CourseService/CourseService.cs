@@ -18,31 +18,31 @@ namespace CourseServices
 
         public async Task AddCourse(Course course)
         {
-            _unitOfWork.ICourseRepository.Add(course);
+            _unitOfWork.CourseRepository.Add(course);
             await _unitOfWork.Commit();
         }
 
         public async Task DeleteCourse(Course course)
         {
-            _unitOfWork.ICourseRepository.Remove(course);
+            _unitOfWork.CourseRepository.Remove(course);
             await _unitOfWork.Commit();
         }
 
         public async Task<CourseDTO> GetCourseById(int courseId)
         {
-            return _mapper.Map<CourseDTO>(await _unitOfWork.ICourseRepository.GetCourseById(courseId));
+            return _mapper.Map<CourseDTO>(await _unitOfWork.CourseRepository.GetCourseById(courseId));
         }
 
         public async Task<List<CourseDTO>> GetListCourse()
         {
-            return _mapper.Map<List<CourseDTO>>(await _unitOfWork.ICourseRepository.GetListCourseByInclude().ToListAsync());
+            return _mapper.Map<List<CourseDTO>>(await _unitOfWork.CourseRepository.GetListCourseByInclude().ToListAsync());
         }
 
 
 
         public async Task UpdateCourse(Course course)
         {
-            _unitOfWork.ICourseRepository.Update(course);
+            _unitOfWork.CourseRepository.Update(course);
             await _unitOfWork.Commit();
         }
     }

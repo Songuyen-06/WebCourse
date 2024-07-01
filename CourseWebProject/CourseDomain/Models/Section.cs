@@ -11,7 +11,7 @@ public partial class Section
 
     public string Title { get; set; } = null!;
 
-    public string? Duration { get; set; }
+    public TimeSpan? Duration { get; set; }
 
     public int? Position { get; set; }
 

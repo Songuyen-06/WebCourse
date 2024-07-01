@@ -41,6 +41,33 @@ namespace CourseInfrastructure.Migrations
                         .HasName("PK__Categori__19093A2B4E099F62");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryId = 1,
+                            Name = "Category 1"
+                        },
+                        new
+                        {
+                            CategoryId = 2,
+                            Name = "Category 2"
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            Name = "Category 3"
+                        },
+                        new
+                        {
+                            CategoryId = 4,
+                            Name = "Category 4"
+                        },
+                        new
+                        {
+                            CategoryId = 5,
+                            Name = "Category 5"
+                        });
                 });
 
             modelBuilder.Entity("CourseDomain.Certificate", b =>
@@ -76,6 +103,28 @@ namespace CourseInfrastructure.Migrations
                     b.HasKey("CertificateId");
 
                     b.ToTable("Certificates");
+
+                    b.HasData(
+                        new
+                        {
+                            CertificateId = 1,
+                            CertificateUrl = "https://example.com/certificate1",
+                            CompletionDate = new DateTime(2023, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CompletionTime = new TimeSpan(0, 2, 0, 0, 0),
+                            Description = "Description for Certificate 1",
+                            IssuedBy = "Issuing Authority 1",
+                            Title = "Certificate 1"
+                        },
+                        new
+                        {
+                            CertificateId = 2,
+                            CertificateUrl = "https://example.com/certificate2",
+                            CompletionDate = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CompletionTime = new TimeSpan(0, 1, 30, 0, 0),
+                            Description = "Description for Certificate 2",
+                            IssuedBy = "Issuing Authority 2",
+                            Title = "Certificate 2"
+                        });
                 });
 
             modelBuilder.Entity("CourseDomain.Checkout", b =>
@@ -122,6 +171,58 @@ namespace CourseInfrastructure.Migrations
                     b.HasIndex("StudentId");
 
                     b.ToTable("Checkouts");
+
+                    b.HasData(
+                        new
+                        {
+                            CheckoutId = 1,
+                            Amount = 50m,
+                            CourseId = 1,
+                            PaymentDate = new DateTime(2024, 7, 1, 13, 55, 46, 914, DateTimeKind.Local).AddTicks(8964),
+                            PaymentStatus = "Paid",
+                            StudentId = 1,
+                            TransactionId = "1ABD"
+                        },
+                        new
+                        {
+                            CheckoutId = 2,
+                            Amount = 75m,
+                            CourseId = 2,
+                            PaymentDate = new DateTime(2024, 7, 1, 13, 55, 46, 914, DateTimeKind.Local).AddTicks(8979),
+                            PaymentStatus = "Pending",
+                            StudentId = 2,
+                            TransactionId = "16AHD"
+                        },
+                        new
+                        {
+                            CheckoutId = 3,
+                            Amount = 100m,
+                            CourseId = 3,
+                            PaymentDate = new DateTime(2024, 7, 1, 13, 55, 46, 914, DateTimeKind.Local).AddTicks(8982),
+                            PaymentStatus = "Failed",
+                            StudentId = 3,
+                            TransactionId = "1ABDOD"
+                        },
+                        new
+                        {
+                            CheckoutId = 4,
+                            Amount = 120m,
+                            CourseId = 4,
+                            PaymentDate = new DateTime(2024, 7, 1, 13, 55, 46, 914, DateTimeKind.Local).AddTicks(8984),
+                            PaymentStatus = "Paid",
+                            StudentId = 4,
+                            TransactionId = "1ADFHBD"
+                        },
+                        new
+                        {
+                            CheckoutId = 5,
+                            Amount = 80m,
+                            CourseId = 5,
+                            PaymentDate = new DateTime(2024, 7, 1, 13, 55, 46, 914, DateTimeKind.Local).AddTicks(8987),
+                            PaymentStatus = "Pending",
+                            StudentId = 5,
+                            TransactionId = "1ABDD"
+                        });
                 });
 
             modelBuilder.Entity("CourseDomain.Course", b =>
@@ -183,6 +284,78 @@ namespace CourseInfrastructure.Migrations
                     b.HasIndex("InstructorId");
 
                     b.ToTable("Courses");
+
+                    b.HasData(
+                        new
+                        {
+                            CourseId = 1,
+                            CategoryId = 1,
+                            Description = "Description for Course 1",
+                            Duration = "2 hours",
+                            InstructorId = 1,
+                            Level = "Beginner",
+                            Price = 100m,
+                            Rating = 4.5m,
+                            Sale = 10,
+                            Title = "Course 1",
+                            Url = "https://example.com/course1"
+                        },
+                        new
+                        {
+                            CourseId = 2,
+                            CategoryId = 2,
+                            Description = "Description for Course 2",
+                            Duration = "3 hours",
+                            InstructorId = 2,
+                            Level = "Intermediate",
+                            Price = 150m,
+                            Rating = 4.2m,
+                            Sale = 5,
+                            Title = "Course 2",
+                            Url = "https://example.com/course2"
+                        },
+                        new
+                        {
+                            CourseId = 3,
+                            CategoryId = 3,
+                            Description = "Description for Course 3",
+                            Duration = "2.5 hours",
+                            InstructorId = 3,
+                            Level = "Advanced",
+                            Price = 120m,
+                            Rating = 4.8m,
+                            Sale = 15,
+                            Title = "Course 3",
+                            Url = "https://example.com/course3"
+                        },
+                        new
+                        {
+                            CourseId = 4,
+                            CategoryId = 4,
+                            Description = "Description for Course 4",
+                            Duration = "4 hours",
+                            InstructorId = 4,
+                            Level = "Expert",
+                            Price = 200m,
+                            Rating = 4.9m,
+                            Sale = 20,
+                            Title = "Course 4",
+                            Url = "https://example.com/course4"
+                        },
+                        new
+                        {
+                            CourseId = 5,
+                            CategoryId = 5,
+                            Description = "Description for Course 5",
+                            Duration = "2.8 hours",
+                            InstructorId = 5,
+                            Level = "Intermediate",
+                            Price = 180m,
+                            Rating = 4.6m,
+                            Sale = 12,
+                            Title = "Course 5",
+                            Url = "https://example.com/course5"
+                        });
                 });
 
             modelBuilder.Entity("CourseDomain.Document", b =>
@@ -219,6 +392,43 @@ namespace CourseInfrastructure.Migrations
                     b.HasIndex("SectionId");
 
                     b.ToTable("Documents");
+
+                    b.HasData(
+                        new
+                        {
+                            DocumentId = 1,
+                            SectionId = 1,
+                            Title = "Document 1",
+                            Url = "https://example.com/document1"
+                        },
+                        new
+                        {
+                            DocumentId = 2,
+                            SectionId = 2,
+                            Title = "Document 2",
+                            Url = "https://example.com/document2"
+                        },
+                        new
+                        {
+                            DocumentId = 3,
+                            SectionId = 3,
+                            Title = "Document 3",
+                            Url = "https://example.com/document3"
+                        },
+                        new
+                        {
+                            DocumentId = 4,
+                            SectionId = 4,
+                            Title = "Document 4",
+                            Url = "https://example.com/document4"
+                        },
+                        new
+                        {
+                            DocumentId = 5,
+                            SectionId = 5,
+                            Title = "Document 5",
+                            Url = "https://example.com/document5"
+                        });
                 });
 
             modelBuilder.Entity("CourseDomain.Enrollment", b =>
@@ -249,6 +459,43 @@ namespace CourseInfrastructure.Migrations
                     b.HasIndex("StudentId");
 
                     b.ToTable("Enrollments");
+
+                    b.HasData(
+                        new
+                        {
+                            EnrollmentId = 1,
+                            CourseId = 1,
+                            EnrollmentDate = new DateTime(2024, 7, 1, 13, 55, 46, 914, DateTimeKind.Local).AddTicks(9013),
+                            StudentId = 1
+                        },
+                        new
+                        {
+                            EnrollmentId = 2,
+                            CourseId = 2,
+                            EnrollmentDate = new DateTime(2024, 7, 1, 13, 55, 46, 914, DateTimeKind.Local).AddTicks(9018),
+                            StudentId = 2
+                        },
+                        new
+                        {
+                            EnrollmentId = 3,
+                            CourseId = 3,
+                            EnrollmentDate = new DateTime(2024, 7, 1, 13, 55, 46, 914, DateTimeKind.Local).AddTicks(9020),
+                            StudentId = 3
+                        },
+                        new
+                        {
+                            EnrollmentId = 4,
+                            CourseId = 4,
+                            EnrollmentDate = new DateTime(2024, 7, 1, 13, 55, 46, 914, DateTimeKind.Local).AddTicks(9021),
+                            StudentId = 4
+                        },
+                        new
+                        {
+                            EnrollmentId = 5,
+                            CourseId = 5,
+                            EnrollmentDate = new DateTime(2024, 7, 1, 13, 55, 46, 914, DateTimeKind.Local).AddTicks(9023),
+                            StudentId = 5
+                        });
                 });
 
             modelBuilder.Entity("CourseDomain.Lecture", b =>
@@ -263,10 +510,10 @@ namespace CourseInfrastructure.Migrations
                     b.Property<string>("Content")
                         .HasColumnType("text");
 
-                    b.Property<string>("Duration")
+                    b.Property<TimeSpan?>("Duration")
                         .HasMaxLength(50)
                         .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("time");
 
                     b.Property<int?>("Position")
                         .HasColumnType("int");
@@ -293,6 +540,53 @@ namespace CourseInfrastructure.Migrations
                     b.HasIndex("SectionId");
 
                     b.ToTable("Lectures");
+
+                    b.HasData(
+                        new
+                        {
+                            LectureId = 1,
+                            Content = "Lecture content 1",
+                            Duration = new TimeSpan(0, 0, 30, 0, 0),
+                            SectionId = 1,
+                            Title = "Lecture 1",
+                            VideoUrl = "https://example.com/video1"
+                        },
+                        new
+                        {
+                            LectureId = 2,
+                            Content = "Lecture content 2",
+                            Duration = new TimeSpan(0, 0, 45, 0, 0),
+                            SectionId = 2,
+                            Title = "Lecture 2",
+                            VideoUrl = "https://example.com/video2"
+                        },
+                        new
+                        {
+                            LectureId = 3,
+                            Content = "Lecture content 3",
+                            Duration = new TimeSpan(0, 1, 0, 0, 0),
+                            SectionId = 3,
+                            Title = "Lecture 3",
+                            VideoUrl = "https://example.com/video3"
+                        },
+                        new
+                        {
+                            LectureId = 4,
+                            Content = "Lecture content 4",
+                            Duration = new TimeSpan(0, 0, 50, 0, 0),
+                            SectionId = 4,
+                            Title = "Lecture 4",
+                            VideoUrl = "https://example.com/video4"
+                        },
+                        new
+                        {
+                            LectureId = 5,
+                            Content = "Lecture content 5",
+                            Duration = new TimeSpan(0, 0, 55, 0, 0),
+                            SectionId = 5,
+                            Title = "Lecture 5",
+                            VideoUrl = "https://example.com/video5"
+                        });
                 });
 
             modelBuilder.Entity("CourseDomain.Review", b =>
@@ -314,6 +608,9 @@ namespace CourseInfrastructure.Migrations
                     b.Property<decimal>("Rating")
                         .HasColumnType("decimal(2, 1)");
 
+                    b.Property<int?>("ReOpen")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("ReviewDate")
                         .HasColumnType("date");
 
@@ -329,6 +626,53 @@ namespace CourseInfrastructure.Migrations
                     b.HasIndex("StudentId");
 
                     b.ToTable("Reviews");
+
+                    b.HasData(
+                        new
+                        {
+                            ReviewId = 1,
+                            Comment = "Good course",
+                            CourseId = 1,
+                            Rating = 4.5m,
+                            ReviewDate = new DateTime(2024, 7, 1, 13, 55, 46, 914, DateTimeKind.Local).AddTicks(9147),
+                            StudentId = 1
+                        },
+                        new
+                        {
+                            ReviewId = 2,
+                            Comment = "Could be better",
+                            CourseId = 2,
+                            Rating = 3.8m,
+                            ReviewDate = new DateTime(2024, 7, 1, 13, 55, 46, 914, DateTimeKind.Local).AddTicks(9151),
+                            StudentId = 2
+                        },
+                        new
+                        {
+                            ReviewId = 3,
+                            Comment = "Excellent content",
+                            CourseId = 3,
+                            Rating = 4.2m,
+                            ReviewDate = new DateTime(2024, 7, 1, 13, 55, 46, 914, DateTimeKind.Local).AddTicks(9153),
+                            StudentId = 3
+                        },
+                        new
+                        {
+                            ReviewId = 4,
+                            Comment = "Very informative",
+                            CourseId = 4,
+                            Rating = 4.7m,
+                            ReviewDate = new DateTime(2024, 7, 1, 13, 55, 46, 914, DateTimeKind.Local).AddTicks(9155),
+                            StudentId = 4
+                        },
+                        new
+                        {
+                            ReviewId = 5,
+                            Comment = "Helped me a lot",
+                            CourseId = 5,
+                            Rating = 4.0m,
+                            ReviewDate = new DateTime(2024, 7, 1, 13, 55, 46, 914, DateTimeKind.Local).AddTicks(9157),
+                            StudentId = 5
+                        });
                 });
 
             modelBuilder.Entity("CourseDomain.Role", b =>
@@ -350,6 +694,33 @@ namespace CourseInfrastructure.Migrations
                         .HasName("PK__Role__8AFACE3A672CA399");
 
                     b.ToTable("Role", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            RoleId = 1,
+                            Name = "Role 1"
+                        },
+                        new
+                        {
+                            RoleId = 2,
+                            Name = "Role 2"
+                        },
+                        new
+                        {
+                            RoleId = 3,
+                            Name = "Role 3"
+                        },
+                        new
+                        {
+                            RoleId = 4,
+                            Name = "Role 4"
+                        },
+                        new
+                        {
+                            RoleId = 5,
+                            Name = "Role 5"
+                        });
                 });
 
             modelBuilder.Entity("CourseDomain.Section", b =>
@@ -365,10 +736,10 @@ namespace CourseInfrastructure.Migrations
                         .HasColumnType("int")
                         .HasColumnName("CourseID");
 
-                    b.Property<string>("Duration")
+                    b.Property<TimeSpan?>("Duration")
                         .HasMaxLength(50)
                         .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("time");
 
                     b.Property<int?>("Position")
                         .HasColumnType("int");
@@ -385,6 +756,43 @@ namespace CourseInfrastructure.Migrations
                     b.HasIndex("CourseId");
 
                     b.ToTable("Sections");
+
+                    b.HasData(
+                        new
+                        {
+                            SectionId = 1,
+                            CourseId = 1,
+                            Duration = new TimeSpan(0, 1, 0, 0, 0),
+                            Title = "Section 1"
+                        },
+                        new
+                        {
+                            SectionId = 2,
+                            CourseId = 2,
+                            Duration = new TimeSpan(0, 1, 30, 0, 0),
+                            Title = "Section 2"
+                        },
+                        new
+                        {
+                            SectionId = 3,
+                            CourseId = 3,
+                            Duration = new TimeSpan(0, 2, 0, 0, 0),
+                            Title = "Section 3"
+                        },
+                        new
+                        {
+                            SectionId = 4,
+                            CourseId = 4,
+                            Duration = new TimeSpan(0, 1, 12, 0, 0),
+                            Title = "Section 4"
+                        },
+                        new
+                        {
+                            SectionId = 5,
+                            CourseId = 5,
+                            Duration = new TimeSpan(0, 1, 48, 0, 0),
+                            Title = "Section 5"
+                        });
                 });
 
             modelBuilder.Entity("CourseDomain.StudentCertificate", b =>
@@ -400,6 +808,18 @@ namespace CourseInfrastructure.Migrations
                     b.HasIndex("CertificateId");
 
                     b.ToTable("StudentCertificates");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            CertificateId = 1
+                        },
+                        new
+                        {
+                            UserId = 2,
+                            CertificateId = 2
+                        });
                 });
 
             modelBuilder.Entity("CourseDomain.StudentCourse", b =>
@@ -457,6 +877,24 @@ namespace CourseInfrastructure.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("SystemSettings");
+
+                    b.HasData(
+                        new
+                        {
+                            SettingId = 1,
+                            Language = "English",
+                            NotificationsEnabled = true,
+                            Theme = "Dark",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            SettingId = 2,
+                            Language = "French",
+                            NotificationsEnabled = false,
+                            Theme = "Light",
+                            UserId = 2
+                        });
                 });
 
             modelBuilder.Entity("CourseDomain.User", b =>
@@ -504,6 +942,58 @@ namespace CourseInfrastructure.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            Bio = "Bio for User 1",
+                            Email = "user1@example.com",
+                            FullName = "User 1",
+                            Password = "123",
+                            Phone = "123456789",
+                            RoleId = 1
+                        },
+                        new
+                        {
+                            UserId = 2,
+                            Bio = "Bio for User 2",
+                            Email = "user2@example.com",
+                            FullName = "User 2",
+                            Password = "123",
+                            Phone = "987654321",
+                            RoleId = 2
+                        },
+                        new
+                        {
+                            UserId = 3,
+                            Bio = "Bio for User 3",
+                            Email = "user3@example.com",
+                            FullName = "User 3",
+                            Password = "123",
+                            Phone = "555555555",
+                            RoleId = 3
+                        },
+                        new
+                        {
+                            UserId = 4,
+                            Bio = "Bio for User 4",
+                            Email = "user4@example.com",
+                            FullName = "User 4",
+                            Password = "123",
+                            Phone = "111111111",
+                            RoleId = 4
+                        },
+                        new
+                        {
+                            UserId = 5,
+                            Bio = "Bio for User 5",
+                            Email = "user5@example.com",
+                            FullName = "User 5",
+                            Password = "123",
+                            Phone = "999999999",
+                            RoleId = 5
+                        });
                 });
 
             modelBuilder.Entity("CourseDomain.Checkout", b =>

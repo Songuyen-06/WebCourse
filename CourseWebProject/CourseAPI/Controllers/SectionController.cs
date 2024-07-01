@@ -1,6 +1,7 @@
 ﻿using CourseServices;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
 
 namespace CourseAPI.Controllers
 {
@@ -16,11 +17,14 @@ namespace CourseAPI.Controllers
         public ISectionService _sectionService { get; set; }
 
         [HttpGet("getListSectionByCourseId/{courseId}")]
-        public async Task<IActionResult> GetListSectionByCourseId(int courseId)
+        [EnableQuery]
+        public async Task<IActionResult> Get(int courseId)
         {
 
-            var sections =await _sectionService.GetListSectionByCourseId(courseId);
+            var sections = await _sectionService.GetListSectionByCourseId(courseId);
             return Ok(sections);
         }
     }
+
 }
+

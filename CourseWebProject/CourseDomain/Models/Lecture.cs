@@ -15,7 +15,7 @@ public partial class Lecture
 
     public string? VideoUrl { get; set; }
 
-    public string? Duration { get; set; }
+    public TimeSpan? Duration { get; set; }
 
     public int? Position { get; set; }
 

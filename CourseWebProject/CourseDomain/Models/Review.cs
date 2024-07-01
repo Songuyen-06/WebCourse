@@ -17,6 +17,8 @@ public partial class Review
 
     public DateTime ReviewDate { get; set; }
 
+    public int? ReOpen { get; set; }
+
     public virtual Course? Course { get; set; }
 
     public virtual User? Student { get; set; }

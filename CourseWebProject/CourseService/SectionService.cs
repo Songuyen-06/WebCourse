@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CourseDomain;
 using CourseDomain.DTOs;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,8 +24,9 @@ namespace CourseServices
 
         public async Task<List<SectionDTO>> GetListSectionByCourseId(int courseId)
         {
-            var sections = await _unitOfWork.ISectionRepository.GetListSectionByCourseId(courseId);
+            var sections = await _unitOfWork.SectionRepository.GetListSectionByCourseId(courseId);
             return _mapper.Map<List<SectionDTO>>(sections);
         }
+       
     }
 }

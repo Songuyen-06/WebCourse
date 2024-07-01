@@ -16,11 +16,13 @@ namespace CourseInfrastructure
         public ReviewRepository(CoursesDbContext dbContext) : base(dbContext)
         {
         }
-
-        public IEnumerable<Review> GetListReviewByCourseId(int courseId)
+        public IQueryable<Review> GetListReviewByInclude()
         {
-            return _entitySet.Where(r => r.CourseId == courseId).Include(r => r.Student).AsEnumerable();
-
+            return _entitySet.Include(r => r.Course).Include(r => r.Student);
+        }
+        public async Task<IEnumerable<Review>> GetListReviewByCourseId(int courseId)
+        {
+            return await GetListReviewByInclude().Where(r => r.CourseId == courseId).ToListAsync();
         }
 
     }
