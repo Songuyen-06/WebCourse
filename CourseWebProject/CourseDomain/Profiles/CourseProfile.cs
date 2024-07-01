@@ -22,9 +22,11 @@ namespace CourseDomain.Profiles
 
                     .ForMember(dest => dest.InstructorName, opt => opt.MapFrom(src => src.Instructor.FullName))
          .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.Price))
+        .ForMember(dest => dest.PriceAfterSale, opt => opt.MapFrom(src => src.Price - ((decimal)0.01 * src.Sale * src.Price) ))
+
                        .ForMember(dest => dest.Sale, opt => opt.MapFrom(src => src.Sale))
 
-          .ForMember(dest => dest.Rating, opt => opt.MapFrom(src => src.Rating))
+        .ForMember(dest => dest.Rating, opt => opt.MapFrom(src => src.Reviews.Any() ? src.Reviews.Average(r => r.Rating) : 0))
         .ForMember(dest => dest.RatingNumber, opt => opt.MapFrom(src => src.Reviews.Count()))
             .ForMember(dest => dest.StudentNumber, opt => opt.MapFrom(src => src.StudentCourses.Count))
 

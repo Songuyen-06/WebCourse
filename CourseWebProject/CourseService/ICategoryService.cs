@@ -1,4 +1,5 @@
 ﻿using CourseDomain;
+using CourseDomain.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace CourseServices
 {
     public interface ICategoryService
     {
-        public Task<IEnumerable<Category>> GetListCategory();
+        public Task<List<CategoryDTO>> GetListCategory();
 
     }
 }

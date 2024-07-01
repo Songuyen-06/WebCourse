@@ -19,6 +19,8 @@ namespace CourseDomain.DTOs
 
         public string? InstructorName { get; set; }
         public decimal? Price { get; set; }
+        public decimal? PriceAfterSale { get; set; }
+
         public int Sale { get; set; }
 
         public decimal? Rating { get; set; }

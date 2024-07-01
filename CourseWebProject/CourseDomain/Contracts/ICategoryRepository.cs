@@ -9,6 +9,7 @@ namespace CourseDomain.Contracts
 {
     public interface ICategoryRepository:IGenericRepository<Category>
     {
+        public Task<IEnumerable<Category>> GetListCategory();
 
     }
 }

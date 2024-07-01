@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using CourseDomain;
 using CourseServices;
+using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.OData.Query;
 
 namespace CourseAPI.Controllers
 {
@@ -20,7 +22,7 @@ namespace CourseAPI.Controllers
 
 
         // GET: api/Course
-        [HttpGet("getCourseById")]
+        [HttpGet("getCourseById/{id}")]
         public async Task<IActionResult> GetCourseById(int id)
         {
             var courses =await _courseService.GetCourseById(id);
@@ -30,6 +32,7 @@ namespace CourseAPI.Controllers
 
         }
         [HttpGet("getListCourse")]
+        [EnableQuery]
         public async Task<IActionResult> Get()
         {
             var courses = await _courseService.GetListCourse();

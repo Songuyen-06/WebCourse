@@ -1,4 +1,7 @@
-﻿using CourseDomain;
+﻿using AutoMapper;
+using CourseDomain;
+using CourseDomain.DTOs;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,20 +11,23 @@ using System.Threading.Tasks;
 
 namespace CourseServices
 {
-    public  class CategoryService : ICategoryService
+    public class CategoryService : ICategoryService
     {
         public IUnitOfWork _unitOfWork { get; set; }
+        private readonly IMapper _mapper;
 
-        public CategoryService(IUnitOfWork unitOfWork)
+
+        public CategoryService(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
 
 
-        public async Task<IEnumerable<Category>> GetListCategory()
+        public async Task<List<CategoryDTO>> GetListCategory()
         {
-            return await _unitOfWork.CategoryRepository.GetAll();
+            return _mapper.Map<List<CategoryDTO>>(await _unitOfWork.CategoryRepository.GetListCategory());
         }
 
 
